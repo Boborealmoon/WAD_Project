@@ -4,7 +4,7 @@
     <button @click="getRandomRecipe">Click to get random recipe</button>
     <div class="container" v-if="RandomRecipe">
       <div class="row justify-content-start">
-        <div class="rando-recipe col-lg-10 col-md-11 col-sm-12">
+        <div class="rando-recipe col-lg-8 col-md-10 col-sm-12">
             <div class="rando-recipe-header">
             Recipe of the Day
             </div>
