@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Hello World</h1>
-    <button @click="fetchProductsByPromo">Fetch Supermarket Data</button>
+    <button @click="fetchProducts">Fetch Supermarket Data</button>
       <!-- Display supermarket data here -->
       <div :style="{display: 'flex'}" v-for='product in supermarketData' :key="product.product_link">
         <div :style="{ width: '50%'} ">
@@ -25,14 +25,20 @@ export default {
   name: 'YourComponentName',
   data() {
     return {
-      title: 'pork', // this value should be '' then v-model to input text 
       supermarketData: [],
-      supermarketName: 'FairPrice', // Other options include: ColdStorage, FairPrice 
-      price: '5', // this value should be 0 by default (?) and then v-model to input text 
-      ascending: true // default value is true, sort in increasing price
+      search: 'egg',
+      minPrice: 3, // this value should be 0 by default (?) and then v-model to input text 
+      maxPrice: 3.5, // this value should be 0 by default (?) and then v-model to input text 
+      ascending: true, // default value is true, sort in increasing price
+      onPromotion: true, // default value is true, sort in increasing price
+      supermarketName: 'ColdStorage', // Other options include: ColdStorage, FairPrice 
     };
   },
   methods: {
+    // minPrice = 0, maxPrice = Number.POSITIVE_INFINITY, onPromotion = false, ascending = true, supermarketName = ''
+    async fetchProducts(){
+      this.supermarketData = await smAPI.fetchProducts(this.search, this.minPrice, this.maxPrice, this.onPromotion, this.ascending, this.supermarketName); 
+    },
     async fetchAllProducts(){
       this.supermarketData = await smAPI.fetchAllProducts(); 
     },
