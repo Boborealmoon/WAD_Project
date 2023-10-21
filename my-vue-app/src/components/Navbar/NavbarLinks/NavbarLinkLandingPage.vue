@@ -1,18 +1,18 @@
 <template>
   <div class="text-center d-flex">
     <!-- register  -->
-    <div class="hovereffect">
-      <router-link class="nav-link py-0 " to="/register">
-        <div :class="highlighLink('register')">
+    <div class="hovereffect rounded-4">
+      <router-link class="nav-link " to="/register">
+        <div :class="highlighLink('/register')">
           <div class="fw-semibold">Register</div>
         </div>
       </router-link>
     </div>
 
     <!-- login -->
-    <div class="hovereffect">
-      <router-link class="nav-link py-0 " to="/login">
-        <div :class="highlighLink('login')">
+    <div class="hovereffect rounded-4">
+      <router-link class="nav-link" to="/login">
+        <div :class="highlighLink('/login')">
           <div class="fw-semibold">Login</div>
         </div>
       </router-link>
@@ -34,7 +34,7 @@ export default {
       // console.log(eachLink.routeTo);
       return this.$route.path.startsWith(pathstring)
         ? "mx-2 highlightBackground"
-        : "mx-2";
+        : "mx-2 ";
     },
   },
 };
@@ -42,12 +42,10 @@ export default {
 
 <style>
 .highlightBackground {
-  background-color: #EF8A5B;
-  border-radius: 25px;
+  color: #FBE8A6;
 }
 
 .hovereffect :hover{
-            background-color: #FBE8A6;
-            border-radius: 25px;
-        }
+  color: #FBE8A6;
+}
 </style>

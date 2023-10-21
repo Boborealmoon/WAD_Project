@@ -1,8 +1,6 @@
 <template> 
   <div id="container" class="mx-auto d-block">
-    <div>
-      <NavbarLandingPage />
-    </div>
+    <NavbarLandingPage />
     <div id="background-container">
       <img id="login-background" src="../Assets/background.png" alt="background">
       <userFill />
@@ -31,12 +29,13 @@ export default {
 }
 
 #background-container {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   overflow: hidden;
-
 }
 
 #login-background {
@@ -46,6 +45,5 @@ export default {
 }
 #login-body{
   margin-top:200px;
-
 }
 </style>

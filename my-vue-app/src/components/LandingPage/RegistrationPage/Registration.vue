@@ -1,8 +1,6 @@
 <template> 
   <div id="container" class="mx-auto d-block">
-    <div>
-      <NavbarLandingPage />
-    </div>
+    <NavbarLandingPage />
     <div id="background-container">
       <img id="Registration-background" src="../Assets/background.png" alt="background">
       <RegistrationFill />
@@ -39,7 +37,6 @@ export default {
   left: 0;
   z-index: -1;
   overflow: hidden;
-
 }
 
 #Registration-background {
@@ -49,6 +46,5 @@ export default {
 }
 #Registration-body{
   margin-top:200px;
-
 }
 </style>
