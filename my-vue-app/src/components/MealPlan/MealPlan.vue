@@ -33,10 +33,10 @@
 
 <script>
 export default {
-  created() {
-    this.getBreakfastRecipe();
-    this.getLunchRecipe();
-    this.getDinnerRecipe();
+  async created() {
+    await this.getBreakfastRecipe();
+    await this.getLunchRecipe();
+    await this.getDinnerRecipe();
   },
   data() {
     return {

@@ -237,17 +237,8 @@ export default {
         this.setDinnerFromSavedRecipes();
       }
       else{
-        if(this.initialMealType=="Breakfast"){
-        await this.$smAPI.setBreakfastRecipeInFB();
+        await this.$smAPI.unsetMealPlanFromSavedRecipe(this.recipeDetails.id)
       }
-      else if(this.initialMealType=="Lunch"){
-        await this.$smAPI.setLunchRecipeInFB();
-      }
-      else if(this.initialMealType=="Dinner"){
-        await this.$smAPI.setDinnerRecipeInFB();
-      }
-      }
-      this.initialMealType=this.meal
     }
   },
   async created() {
